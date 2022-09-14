@@ -45,6 +45,13 @@ public class MainActivity extends AppCompatActivity {
                 persegi(i+5, i+10);
             }
         }
+        Button btnHitung = findViewById(R.id.btn_hitung);
+        btnHuting.setOnClickListener(new view.OnClickListener(){
+            @override
+            public void onClick(View view) {
+             hitungBidang(view);
+            }
+        });
     }
     
     public void hitungBidang(View v){
