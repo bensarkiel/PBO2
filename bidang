@@ -46,6 +46,18 @@ public class MainActivity extends AppCompatActivity {
             }
         }
     }
+    
+    public void hitungBidang(View v){
+        EditText inpPanjang = findViewById(R.id.input_panjang);
+        EditText inpLebar = findViewById(R.id.input_lebar);
+        TextView txtHasil = findViewById(R.id.txt_hasil);
+        
+        persegi(Integer.perseInt(inpPanjang.getText().toString()), Integer.parseInt(inpLebar.getText().toString()));
+        String teksHasil = "Bidang : "+namaBidang+"\n";
+        teksHasil += "dengan panjang: "+panjang+" dan lebar: "+lebar+\n";
+        teksHasil += "Luasnya: "+luas+=\n";
+        teksHasil += "Kelilingnya"+keliling+"n\";
+    }
 
     public void static_array(){
         String dataNim[] = new String[10];
