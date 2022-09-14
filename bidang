@@ -1,0 +1,135 @@
+package com.example.pertemuan2;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import android.os.Bundle;
+import android.util.Log;
+
+import java.util.ArrayList;
+
+public class MainActivity extends AppCompatActivity {
+
+    String namaBidang;
+    int panjang, lebar;
+    double luas, keliling;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        helloworld("Herlinda Agustina");
+        //persegi();
+        Log.d("bidang", "======================");
+        //lingkaran();
+
+        namaBidang = "Lingkaran";
+        if(namaBidang.equalsIgnoreCase("Lingkaran")){
+            lingkaran( 10);
+        } else {
+            persegi(12, 15);
+        }
+
+        ArrayList<String> bidang = new ArrayList<>();
+        bidang.add("Lingkaran");
+        bidang.add("persegi");
+        bidang.add("Lingkaran");
+        bidang.add("Lingkaran");
+        bidang.add("Persegi");
+
+        for(int i=0; i< bidang.size(); i++){
+            Log.d("bidang", "===== Bidang ke "+(i+1)+" ===");
+            if(bidang.get(i).equalsIgnoreCase("Lingkaran")){
+                lingkaran(i+3);
+            } else {
+                persegi(i+5, i+10);
+            }
+        }
+    }
+
+    public void static_array(){
+        String dataNim[] = new String[10];
+        double dataIpk[] = new double[10];
+
+        dataNim[0] = "A11.2021.12345";
+        dataNim[1] = "A11.2021.12346";
+        dataNim[2] = "A11.2021.12347";
+
+        dataIpk[0] = 3.5;
+        dataIpk[1] = 3.7;
+        dataIpk[2] = 3.1;
+
+        for(int i=0; i < 3; i++){
+            Log.d("array", dataNim[i]+" : "+dataIpk[i]);
+        }
+    }
+
+    public void dinamic_array(){
+        ArrayList<String> dataNim = new ArrayList<>();
+        ArrayList<Double> dataIpk = new ArrayList<>();
+
+        dataNim.add("A11.2021.12345");
+        dataNim.add("A11.2021.12346");
+        dataNim.add("A11.2021.12347");
+
+        dataIpk.add(3.5);
+        dataIpk.add(3.7);
+        dataIpk.add(3.1);
+
+        for(int i=0; i < dataNim.size(); i++){
+            Log.d("larik", dataNim.get(i)+" : "+dataIpk.get(i));
+        }
+    }
+
+    public void lingkaran(int diameter){
+        //namaBidang = "Lingkaran";
+        panjang = diameter; //diameter
+
+        luas = Math.PI * Math.pow((panjang / 2), 2);
+        keliling = 2 * Math.PI * (panjang / 2);
+
+        Log.d("bidang", "Nama bidang: "+namaBidang);
+        Log.d("bidang", "Diameter: "+panjang);
+        Log.d("bidang", "Luasnya: "+luas);
+        Log.d("bidang", "Kelilingnya: "+keliling);
+    }
+
+    public void persegi(int panjang, int lebar){
+        //namaBidang = "Persegi Panjang";
+        this.panjang = panjang;
+        this.lebar = lebar;
+
+        luas = panjang * lebar;
+        keliling = (2 * panjang) + (2 * lebar);
+
+        Log.d("bidang", "Nama bidang: "+namaBidang);
+        Log.d("bidang", "Panjang: "+panjang+" dan lebar: "+lebar);
+        Log.d("bidang", "Luasnya: "+luas);
+        Log.d("bidang", "Kelilingnya: "+keliling);
+    }
+
+    public void helloworld(String nama){
+        Log.d("Hello", "Selamat datang "+nama+", semoga sukses");
+    }
+
+    public void awal(){
+        System.out.println("Selamat datang di pemrograman Java");
+        System.out.println("Ini ya selamat datang lagi");
+        Log.d("output", "Ini pesan yang mau ditampilkan");
+        Log.e("error_smg", "Ini pesan error");
+    }
+
+    public void perulangan(){
+        namaBidang = "Lingkaran";
+        for(int i = 0; i < 5; i++){
+            lingkaran(i+2);
+        }
+
+        namaBidang = "Persegi";
+        int it = 0;
+        while(it < 5){
+            persegi(it+2, it+3);
+            it++;
+        }
+    }
+}
